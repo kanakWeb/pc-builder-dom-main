@@ -30,7 +30,10 @@ document.getElementById('apply-btn').addEventListener('click', function() {
     const inputFiled = document.getElementById('promo-input').value;
     const totalCostOf = document.getElementById('total-price').innerText;
     if (inputFiled == totalCostOf) {
-        inputFiled.value = ' ';
+        const discount = parseFloat(totalCostOf * .2);
+        const total = totalCostOf - discount;
+
+        document.getElementById('total-price').innerText = total;
         alert('code is okay');
 
     } else {
